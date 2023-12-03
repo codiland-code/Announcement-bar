@@ -1,0 +1,163 @@
+:root{
+    --white: #fff;
+    --black: #000;
+    --grey: #535353;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--white);
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+ul{ list-style: none; }
+
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+/*HEADER CSS*/
+.header{
+    padding: 16px 32px;
+    background: var(--white);
+    box-shadow: 0 0 4px 0 var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 48px;
+    height: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+    .submenu[aria-hidden="false"]{
+        visibility: visible;
+        height: auto;
+    }
+
+    .submenu[aria-hidden="true"]{
+        visibility: hidden;
+        height: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .headerList[aria-hidden="true"]{
+        transform: translateX(0%);
+    }
+
+    .headerList[aria-hidden="true"]{
+        transform: translateX(-100%);
+    }
+
+    .headerList{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 320px;
+        height: 100%;
+        padding: 64px 16px;
+        background: var(--white);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .headerList li{ 
+        padding: 8px 0; 
+        border-bottom: 1px solid var(--grey);
+        }
+
+    .close_menu{
+        position: absolute;
+        right: 16px;
+        top: 32px;
+    }
+
+    .submenu > div{ padding: 8px 8px; }
+
+    i{ transition: all 0.3s ease; }
+}
+
+@media screen and (min-width: 768px) {
+    .header{ 
+        padding: 32px 64px; 
+        position: relative;
+        z-index: 2;
+    }
+
+    .headerList{
+        display: flex;
+        gap: 16px;
+    }
+
+    .not_desktop{ display: none; }
+
+    .submenu{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 48px 0 32px 0 ;
+        min-width: 150px;
+        z-index: -1;
+        background: var(--white);
+    }
+
+    .has_child{ position: relative; } 
+
+    .has_child:hover .submenu{ display: block; }
+
+    .submenu > div{  padding: 12px 8px;  }
+
+    .has_child:hover i{
+        transform: rotate(180deg);
+        transition: all 0.3s ease;
+    }
+
+    .header li a.active{
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+}
+
+/*HEADER CSS END*/
+
+/*USPS CSS*/
+
+.usps{
+    background: var(--black);
+    color: var(--white);
+    padding: 16px 0;
+    position: relative;
+}
+
+.animatedUsps{
+    display: flex;
+    justify-content: space-between;
+    animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/*USPS CSS END*/
