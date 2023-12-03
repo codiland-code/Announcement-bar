@@ -24,14 +24,14 @@ a{
 
 /*USPS CSS*/
 
-.usps{
+.announcement{
     background: var(--black);
     color: var(--white);
     padding: 16px 0;
     position: relative;
 }
 
-.animatedUsps{
+.animated{
     display: flex;
     justify-content: space-between;
     animation: scroll 60s linear infinite;
